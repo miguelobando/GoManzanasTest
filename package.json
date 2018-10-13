@@ -1,0 +1,27 @@
+{
+  "name": "gomanzanatest",
+  "version": "1.0.0",
+  "description": "Go manzanas Test",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "coffe-script": "^0.0.1-security",
+    "gulp": "^3.9.1",
+    "gulp-coffee": "^3.0.2",
+    "gulp-load-plugins": "^1.5.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "###*"
+  },
+  "keywords": [
+    "*",
+    "app",
+    "Module"
+  ],
+  "author": "*",
+  "license": "ISC"
+}

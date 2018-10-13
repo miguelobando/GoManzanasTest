@@ -1,0 +1,28 @@
+  <table class="centered">
+       <thead>
+        <tr>
+            <th>Product name</th>
+            <th>Brand</th>
+            <th>Incidents</th>
+            <th>Trend<th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="value in datos | limitTo:limit ">
+          <td>{{value.name }}</td>
+          <td>{{value.brand }}</td>
+          <td>{{value.incidences }}</td>
+          <td>none</td>
+        </tr>
+      </tbody>                  
+</table>
+<span ng-if="limit == 4">
+ <button class="waves-effect waves-light btn-small" ng-click="showMore()">
+     Show more
+ </button>   
+</span>
+<span ng-if="limit > 10">
+ <button class="waves-effect waves-light btn-small" ng-click="showLess()">
+     Show less
+ </button>   
+</span>
