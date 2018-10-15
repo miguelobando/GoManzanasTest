@@ -22,6 +22,35 @@ app.directive('card1', function() {
 app.directive('tableProducts', function() {
   return {
     restrict: 'E',
-    templateUrl: 'templates/tableProducts.html'
+    templateUrl: 'templates/tableProducts.html',
+  };
+});
+
+app.directive('tableBrands',function(){
+    return {
+      restrict:'E',
+      templateUrl: 'templates/tableBrands.html'
+    };
+});
+
+
+app.directive('tableEntities', function(){
+  return {
+    restrict: 'E',
+    templateUrl: 'templates/tableEntities.html'
+  };
+});
+
+app.directive('tableGrowth',function(){
+  return {
+    restrict: 'E',
+    templateUrl: 'templates/tableGrowth.html'
+  };
+});
+
+app.directive('tableComments',function(){
+  return {
+restrict: 'E',
+templateUrl: 'templates/tableComments.html'
   };
 });

@@ -40,7 +40,6 @@ app.directive('hcPieChart', function() {
   };
 });
 
-//@TODO: Add responsive in a good way for pie charts
 app.directive('hcChart', function() {
   return {
     restrict: 'E',
@@ -50,7 +49,7 @@ app.directive('hcChart', function() {
       data: '='
     },
     link: function(scope, element) {
-      Highcharts.chart(element[0], {
+     var chart = Highcharts.chart(element[0], {
         chart: {
           type: 'area',
           plotBackgroundColor: '#ff6666',
@@ -68,7 +67,6 @@ app.directive('hcChart', function() {
             }
           }
         },
-        // clean, unformatted number for year
         yAxis: {
           title: {
             text: ''
@@ -89,12 +87,21 @@ app.directive('hcChart', function() {
           }
         ]
       });
+
+
+     $(window).resize(function() {
+    var width = $(window).width();
+     if (width < 800){
+    chart.setSize(300,400);
+      }
+    });
+
     }
   };
 });
 
-//@TODO: add responsive too and add style for area charts
-app.directive('hcMap', function() {
+//@TODO:  add style for area charts
+app.directive('hcMap', function($http) {
   return {
     restrict: 'E',
     template: '<div></div>',
@@ -102,12 +109,14 @@ app.directive('hcMap', function() {
       datos: '='
     },
     link: function(scope, element) {
+        
+        
       Highcharts.mapChart(element[0], {
         chart: {
           borderWidth: 1,
           map: 'custom/world',
           width: 870,
-          height: 400,
+          height: 630,
           borderColor: '#fffff'
         },
         title: {
@@ -119,7 +128,7 @@ app.directive('hcMap', function() {
         mapNavigation: {
           enabled: true,
           buttonOptions: {
-            verticalAlign: 'bottom'
+            verticalAlign: 'center'
           }
         },
         series: [
@@ -133,7 +142,7 @@ app.directive('hcMap', function() {
             name: 'Population 2016',
             joinBy: ['iso-a3',
           'code3'],
-            data: scope.datos,
+            data: [{"code3": "ABW","z": 1000,"code": "AW"},{"code3": "AFG","z": 34656,"code": "AF"},{"code3": "AGO","z": 28813,"code": "AO"},{"code3": "ALB","z": 2876,  "code": "AL"},{"code3": "BLZ","z": 367,"code": "BZ"},{"code3": "BMU","z": 65,"code": "BM"},{"code3": "BOL","z": 10888, "code": "BO"}] ,
             minSize: 4,
             maxSize: '12%',
             tooltip: {
@@ -146,4 +155,57 @@ app.directive('hcMap', function() {
   };
 });
 
-//@TODO: Fix the data  and add responsive for maps
+
+app.directive('hcLinear',function(){
+  return{
+    restrict: 'E',
+    template: '<div></div>',
+    
+    link: function(scope,element){ 
+    
+   
+    Highcharts.chart(element[0],{
+       
+        chart: {
+            renderTo: 'chart',
+            width: 100, 
+            heigth: 50,            
+        },
+    
+        title: {
+          text: ' '
+        },
+  
+        yAxis:{
+          labels:{
+            enabled: false
+          },
+          visible: false
+        },
+  
+        xAxis: {
+           categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+  
+        labels: {
+          enabled: false
+          }
+        },
+         plotOptions: {
+        series: {
+            lineWidth: 8
+           }
+        },
+        legend: {
+          title: " "
+        },
+        
+        series: [{
+            data: [29.9, 71.5, 106.4, 129.2, 144.0, 176.0,            135.6, 148.5, 216.4, 194.1, 95.6, 54.4],    
+           
+        }]
+    });
+  
+  }
+};
+});
+

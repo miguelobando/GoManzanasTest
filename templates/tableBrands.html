@@ -1,0 +1,22 @@
+<table class="centered">
+	<thead>
+		<th>Brand</th>
+		<th>Trend</th>
+		<th># Incicdents</th>		
+	</thead>
+	<tbody ng-repeat = "value in datos | limitTo:limit2">
+		<td>{{value.brand}}</td>
+		<td><hc-linear> </hc-linear></td>
+		<td>{{value.incidences}}</td>
+	</tbody>
+</table>
+<span ng-if="limit2 == 4">
+ <button class="waves-effect waves-light btn-small" ng-click="showMore2()">
+     Show more
+ </button>   
+</span>
+<span ng-if="limit2 > 10">
+ <button class="waves-effect waves-light btn-small" ng-click="showLess2()">
+     Show less
+ </button>   
+</span>

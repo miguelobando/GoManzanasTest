@@ -1,0 +1,19 @@
+
+<table class="centered">
+	<thead>
+		<tr>
+			<th>Entity</th>
+			<th>Incidents</th>
+			<th>Sellers</th>
+			<th>Products</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="value in datosGrowth">
+			<td>{{value.marketplace}}</td>
+			<td>{{value.incidents}} {{value.incidentsgGrowth }}</td>
+			<td>{{value.sellers}} {{value.sellersGrowth  }}</td>
+			<td> {{value.products}} {{value.productsGrowth }}   </td>
+		</tr>
+	</tbody>
+</table>

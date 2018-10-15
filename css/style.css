@@ -1,0 +1,19 @@
+hc-linear > .highcharts-container  {
+	width: 100px !important;
+	height: 100px !important;
+} 
+
+
+hc-linear>  .highcharts-container svg {
+width: 100px !important;
+	height: 100px !important;	
+}
+
+/*This check fix the responsive thing in the charts */
+@media only screen and (max-width: 600px){
+	.highcharts-container, .highcharts-container svg  {
+		width:100%	!important;}
+		
+}
+
+

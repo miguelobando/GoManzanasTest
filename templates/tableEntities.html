@@ -1,0 +1,24 @@
+<table class="centered">
+	<thead>
+		<tr>
+			<th>Entity</th>
+			<th>Customs</th>
+			<th>Online</th>
+			<th>Other</th>
+			<th>Marketplaces</th>
+			<th>Productos</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="value in datosEntities">
+			<td>{{value.entity}}</td>
+			<td>{{value.customs }}</td>
+			<td>{{value.online }}</td>
+			<td>{{value.other }}</td>
+			<td>{{value.marketplaces }}</td>
+			<td>{{value.products }}</td>
+		</tr>
+	</tbody>
+</table>
+
+<!-- TODO: THE FILTER NOTNULL DOESNT WORK -->

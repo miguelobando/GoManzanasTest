@@ -25,10 +25,11 @@
 				<card1 datos="card3"></card1>
 			</div>			
 		</div>
+
 		<div class="row">
 			<div class="col s12 m4 l4">
 				 <div class="card">	    
-				     <hc-chart title="Loremp impsu" data="chartOptions">Placeholder for generic chart</hc-chart>	
+				     <hc-chart title="Loremp impsu" data="chartOptions" class="pollo">Placeholder for generic chart</hc-chart>	
 				</div>
 			</div>
 			<div class="col s12 m4 l4">
@@ -41,19 +42,69 @@
 						<hc-pie-chart  title="Loremp impsu" data="pieData"></hc-pie-chart>	
 				</div>	
 			</div>
+		</div>
 			<div class="row">
 				<div class="col s12 m8 l8">
-					<div class="card medium">					
+					<div class="card">					
 						<hc-map datos="mapData">Placeholder for map</hc-map>	
 					</div>
 				</div>
 			 	<div class="col s12 m4 l4">
-			 		<div class="card medium">
-			 			<table-products></table-products>
+			 		<div class="card">
+			 			<div class="card-title">
+							<p class="center-align"> Products</p>
+						</div>
+						<div class="card-content">
+							<table-products ></table-products>
+						</div>
 			 		</div>
 			 	</div>
 			</div>
-		</div>	
+			<div class="row">
+				<div class="col s12 m5 l5">
+					<div class="card">
+						<div class="card-title">
+							<p class="center-align"> Brands</p>
+						</div>
+						<div class="card-content">
+							<table-brands></table-brands>	
+						</div>
+					</div>
+				</div>
+				<div class="col s12 m7 l7">
+					<div class="card">
+						<div class="card-title">
+							<p class="center-align">Entities</p>
+						</div>
+						<div class="card-content">
+							<table-entities> </table-entities>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col s12 m6 l6">
+					<div class="card">
+						<div class="card-title">
+							<p class="center-align">Marketplace</p>
+						</div>
+						<div class="card-content">
+							<table-growth></table-growth>
+						</div>
+					</div>
+				</div>
+				<div class="col s12 m6 l6">
+					<div class="card">
+						<div class="class-title">
+							<p class="center-align">Comments</p>
+						</div>
+						<div class="card-content">
+							<table-comments> </table-comments>
+						</div>
+					</div>
+				</div>
+			</div>
+			
 	</div>
 	
 
@@ -76,14 +127,19 @@
     <!-- Materialize css framework CDN -->
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 
     <!-- Materialize  JavaScript CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+
 
     <!-- Angular stuff -->
     <script type="text/javascript" src="js/app.js"></script>
     <script type="text/javascript" src="js/directives/main.js"></script>
     <script type="text/javascript" src="js/directives/charts.js"></script>
-            
+          
 </body>
 </html>

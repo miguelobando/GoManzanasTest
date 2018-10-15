@@ -67,7 +67,7 @@ app.controller 'MainCtrl', ($scope, $filter, $http) ->
   $scope.mapData = []
   $scope.datos = []
   $scope.limit = 4
-  $http.get('data/mapData').success((data) ->
+  $http.get('data/mapData.json').success((data) ->
     $scope.mapData = data
     console.log 'charged'
     console.log data
@@ -75,7 +75,7 @@ app.controller 'MainCtrl', ($scope, $filter, $http) ->
   ).error (data) ->
     console.log 'ERROR'
     return
-  $http.get('data/brands').success((data) ->
+  $http.get('data/brands.json').success((data) ->
     $scope.datos = data
     return
   ).error (err) ->
@@ -92,5 +92,4 @@ app.controller 'MainCtrl', ($scope, $filter, $http) ->
 
   # @TODO: Create function to filter currency
   #@TODO: Create a Service or function to import data from jsons 
-  #@TODO: CHECK SHOW MORE AND SHOW LESS TABLES it doesnt work well
   return

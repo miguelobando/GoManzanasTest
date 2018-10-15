@@ -59,26 +59,46 @@ app.controller('MainCtrl', function($scope, $filter, $http) {
   $scope.mapData = [];
   $scope.datos = [];
   $scope.limit = 4;
-  $http.get('data/mapData').success(function(data) {
-    $scope.mapData = data;
-    console.log('charged');
-    console.log(data);
-  }).error(function(data) {
-    console.log('ERROR');
-  });
-  $http.get('data/brands').success(function(data) {
+  $scope.limit2 = 4;
+  $scope.datosEntities = [];
+  $scope.datosGrowth = [];
+  $scope.datosComments = [{"comment": "LOREM IMPSU", "id" : 1},{"comment": "LOREM IMPSU", "id" : 2},{"comment": "LOREM IMPSU", "id" : 3}];
+
+  $http.get('data/brands.json').success(function(data) {
     $scope.datos = data;
   }).error(function(err) {
     console.log('ERROR');
   });
-  $scope.showMore = function() {
+ 
+  $http.get('data/entityData.json').success(function(data){
+    $scope.datosEntities = data;
+  }).error(function(err) {
+    console.log('ERROR');
+  });
+
+  $http.get('data/growthData.json').success(function(data){
+    $scope.datosGrowth = data})
+    .error(function(erro){
+        console.log('ERROR');
+    });
+  
+ $scope.showMore = function() {
     $scope.limit = 50;
   };
   $scope.showLess = function() {
     $scope.limit = 4;
   };
+  $scope.showMore2 = function() {
+    $scope.limit2 = 50;
+  };
+  $scope.showLess2 = function() {
+    $scope.limit2 = 4;
+  };
+
+
 });
+
+
 
 // @TODO: Create function to filter currency
 //@TODO: Create a Service or function to import data from jsons 
-//@TODO: CHECK SHOW MORE AND SHOW LESS TABLES it doesnt work well
